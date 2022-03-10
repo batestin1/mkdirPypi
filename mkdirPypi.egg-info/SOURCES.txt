@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+mkdirPypi/__init__.py
+mkdirPypi/mkdirPypi.py
+mkdirPypi.egg-info/PKG-INFO
+mkdirPypi.egg-info/SOURCES.txt
+mkdirPypi.egg-info/dependency_links.txt
+mkdirPypi.egg-info/top_level.txt
