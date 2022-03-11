@@ -15,13 +15,22 @@
 
 from pathlib import Path
 from datetime import date
+import getpass
+import platform
+import subprocess
 
-def mkdirPypi(filename):
+def mkdirPypi(file):
+    users=getpass.getuser()
+    res = subprocess.run(["git", "config", "user.name"], stdout=subprocess.PIPE)
+    git_username = res.stdout.strip().decode()
+    filename = file.replace(' ', '_')
     #create a home directory#
-    project_urls = {
-            'Codigo fonte': 'https://github.com/batestin1/',
-            'Download': 'https://github.com/batestin1/'
-        }
+    cd = 'Codigo fonte'
+    dw = 'Download'
+    linkGit = f'https://github.com/{git_username}/'
+    codigo_fonte = f"{cd} : {linkGit}"
+    download = f"{dw} : {linkGit}"
+    project_urls = {codigo_fonte, download}
     path = Path(f"./{filename}")
     path.mkdir(parents=True, exist_ok=True)
     data_atual = date.today()
@@ -40,7 +49,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
     textReadm = f"""
 <h1 align="center">
-<img src="https://img.shields.io/static/v1?label={filename.upper()}%20POR&message=MAYCON%20BATESTIN&color=7159c1&style=flat-square&logo=ghost"/>
+<img src="https://img.shields.io/static/v1?label={filename.upper()}%20POR&message={users}&color=7159c1&style=flat-square&logo=ghost"/>
 <h3> <p align="center">{filename.upper()} </p> </h3>
 <h3> <p align="center"> ================= </p> </h3>
 >> <h3> Resume </h3>
@@ -74,12 +83,12 @@ from setuptools import setup
 setup(
     name = '{filename}',
     version = '1.0.0',
-    author = 'Maycon Cypriano Batestin',
-    author_email = 'mayconcipriano@gmail.com',
+    author = '{users}',
+    author_email = '{users}@mailer.com.br',
     packages = ['{filename}'],
     description = 'a way to make your life easier',
     long_description = 'file: README.md',
-    url = 'https://github.com/batestin1/',
+    url = 'https://github.com/{git_username}/',
     project_urls = {project_urls},
     keywords = 'a way to make your life easier',
     classifiers = []

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = 'mkdirPypi',
-    version = '6.0.0',
+    version = '7.0.0',
     author = 'Maycon Cypriano Batestin',
     author_email = 'mayconcipriano@gmail.com',
     packages = ['mkdirPypi'],
