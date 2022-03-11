@@ -23,3 +23,20 @@ from mkdirPypi import *
 mkdirPypi("hello")
 
 ```
+
+>> <h3> After that </h3>
+
+<p> After configuring your project, run the following commands to upload it to Pypi </p>
+
+```
+python setup.py sdist
+
+
+py -m twine upload  dist/*
+
+```
+
+<p> obs - it is necessary to have twine installed </p>
+```
+pip install twine
+```
