@@ -15,4 +15,4 @@
 
 from .mkdirPypi import *
 
-mkdirPypi("maycon batestin")
+#mkdirPypi("maycon batestin")
