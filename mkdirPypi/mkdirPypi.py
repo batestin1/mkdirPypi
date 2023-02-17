@@ -25,12 +25,14 @@ def mkdirPypi(file):
     git_username = res.stdout.strip().decode()
     filename = file.replace(' ', '_')
     #create a home directory#
-    cd = 'Codigo fonte'
-    dw = 'Download'
+    cd = "Codigo fonte"
+    dw = "Download"
+    commum = ":"
     linkGit = f'https://github.com/{git_username}/'
-    codigo_fonte = f"{cd} : {linkGit}"
-    download = f"{dw} : {linkGit}"
-    project_urls = {codigo_fonte, download}
+    codigo_fonte = f"{cd} {commum} {linkGit}"
+    download = f"{dw} {commum} {linkGit}"
+    project_urls = {'Codigo fonte': linkGit, 'Download': linkGit}
+    #project_urls = {codigo_fonte, download}
     path = Path(f"./{filename}")
     path.mkdir(parents=True, exist_ok=True)
     data_atual = date.today()

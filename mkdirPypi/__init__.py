@@ -13,6 +13,6 @@
                         #                           import your librarys below                           #
                         #********************************************************************************#
 
-from mkdirPypi import *
+from .mkdirPypi import *
 
 mkdirPypi("maycon batestin")
